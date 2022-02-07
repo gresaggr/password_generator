@@ -1,0 +1,37 @@
+{% extends 'generator/base.html' %}
+
+{% block content %}
+    <h1>Генератор паролей</h1>
+    <br>
+    <a href="{% url 'about' %}"> О сайте </a>
+    <br>
+    <br>
+    <form action="{%  url 'password' %}">
+        <label>
+            Выберите длину пароля
+            <select name="length">
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option selected value="10">10</option>
+                <option value="11">11</option>
+                <option value="12">12</option>
+            </select>
+        </label>
+        <br>
+        <label>
+            <input type="checkbox" name="uppercase">
+        </label> Использовать заглавные буквы
+        <br>
+        <label>
+            <input type="checkbox" name="numbers">
+        </label> Использовать цифры
+         <br>
+        <label>
+            <input type="checkbox" name="special">
+        </label> Использовать спец.символы
+         <br><br>
+        <input type="submit" value="Сгенерировать пароль" class="btn btn-primary">
+    </form>
+{% endblock  %}
